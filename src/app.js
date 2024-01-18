@@ -32,3 +32,35 @@ app.use(express.static("./src/public"));
 app.listen(PUERTO, () => {
   console.log(`Servidor escuchando en el puerto ${PUERTO}`);
 });
+
+//Array productos:
+const ProductManager = require("./controllers/product-manager.js");
+const productManager = new ProductManager("./src/models/productos.json");
+
+
+const io = socket(server);
+
+//Obtengo el array:
+io.on("connection", async (socket) => {
+    console.log("Nuevo cliente conectado");
+
+//Enviamos el array de productos al cliente que se conectó:
+    socket.emit("productos", await productManager.getProducts());
+
+//Recibimos el evento "eliminarProducto" desde el cliente:
+    socket.on("eliminarProducto", async (id) => {
+      await productManager.deleteProduct(id);
+
+//Enviamos el array de productos actualizado a todos los productos:
+      io.sockets.emit("productos", await productManager.getProducts());
+  });
+
+
+//Recibimos el evento "agregarProducto" desde el cliente:
+  socket.on("agregarProducto", async (producto) => {
+    await productManager.addProduct(producto);
+
+//Enviamos el array de productos actualizado a todos los productos:
+    io.sockets.emit("productos", await productManager.getProducts());
+});
+});
