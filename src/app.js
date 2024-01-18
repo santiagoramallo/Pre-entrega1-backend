@@ -3,6 +3,7 @@ const PUERTO = 8080;
 const app = express();
 const viewsRouter = require("./routes/views.router.js");
 const exphbs = require("express-handlebars");
+const socket = require("socket.io");
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
