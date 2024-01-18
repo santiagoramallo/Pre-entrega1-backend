@@ -29,10 +29,13 @@ class ProductManager {
     let { title, description, price, img, code, stock } = newObjects;
 
 //Validamos todos los campos.
-    if (![title, description, price, img, code, stock].every(Boolean)) {
-      console.error("Todos los campos son obligatorios");
-      return;
-    }
+if (!(title, description, price, img, code, stock)) {
+
+  console.error("Todos los campos son obligatorios");
+
+  return;
+
+}
 
 //Validamos que el código sea único.
     if (this.products.some(item => item.code === code)) {

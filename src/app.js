@@ -1,6 +1,8 @@
 const express = require('express');
 const PUERTO = 8080;
 const app = express();
+const viewsRouter = require("./routes/views.router.js");
+const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
 const fs = require('fs');
 
@@ -12,8 +14,24 @@ app.use(express.json());
 
 
 //Rutas
-app.use("/api", productsRouter);
-app.use("/api", cartsRouter);
+app.use("/api/products",productsRouter)
+app.use("/api/carts",cartsRouter)
+
+//Motor de plantillas:
+app.engine("handlebars", exphbs.engine());
+
+app.set("view engine", "handlebars");
+
+app.set("views", "./src/views");
+
+
+//middleware
+app.use(express.static("./src/public"));
+
+//Usamos el router
+
+app.use("/", viewsRouter);
+
 
 app.listen(PUERTO, () => {
   console.log(`Servidor escuchando en el puerto ${PUERTO}`);
