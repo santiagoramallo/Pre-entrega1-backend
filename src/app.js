@@ -9,28 +9,24 @@ const fs = require('fs');
 const productsRouter = require("./routes/products.router.js");
 const cartsRouter = require("./routes/carts.router.js");
 
-app.use(express.urlencoded({extended:true}));
-app.use(express.json());
 
 
 //Rutas
 app.use("/api/products",productsRouter)
 app.use("/api/carts",cartsRouter)
+app.use("/", viewsRouter);
 
 //Motor de plantillas:
 app.engine("handlebars", exphbs.engine());
-
 app.set("view engine", "handlebars");
-
 app.set("views", "./src/views");
 
 
 //middleware
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 app.use(express.static("./src/public"));
 
-//Usamos el router
-
-app.use("/", viewsRouter);
 
 
 app.listen(PUERTO, () => {

@@ -1,92 +1,122 @@
 [
     {
-      "id": 1,
       "title": "Zapatillas de Basquet",
       "description": "Zapatillas Nike",
       "price": 150,
       "thumbnail": "Sin imagen",
       "code": "abc123",
-      "stock": 34
+      "stock": 34,
+      "category": "Zapatillas",
+      "status": true,
+      "thumbhails": [],
+      "id": 1
     },
     {
-      "id": 2,
       "title": "Zapatillas de Tenis",
       "description": "Zapatillas Wilson",
       "price": 100,
       "thumbnail": "sin imagen",
       "code": "abc124",
-      "stock": 30
+      "stock": 30,
+      "category": "Zapatillas",
+      "status": true,
+      "thumbhails": [],
+      "id": 2
     },
     {
-      "id": 3,
       "title": "Zapatillas Running",
       "description": "zapatillas under armoun",
       "price": 80,
       "thumbnail": "sin imagen",
       "code": "abc125",
-      "stock": 3
+      "stock": 3,
+      "category": "Zapatillas",
+      "status": true,
+      "thumbhails": [],
+      "id": 3
     },
     {
-      "id": 4,
       "title": "Botines de futbol",
       "description": "Botines de futbol 5",
       "price": 150,
       "thumbnail": "sin imagen",
       "code": "abc126",
-      "stock": 8
+      "stock": 8,
+      "category": "Botines",
+      "status": true,
+      "thumbhails": [],
+      "id": 4
     },
     {
-      "id": 5,
       "title": "Raqueta de tenis",
       "description": "raqueta babolat",
       "price": 50,
       "thumbnail": "sin imagen",
       "code": "abc127",
-      "stock": 25
+      "stock": 25,
+      "category": "Raqueta",
+      "status": true,
+      "thumbhails": [],
+      "id": 5
     },
     {
-      "id": 6,
       "title": "Pelota de basquet",
       "description": "Pelota molten",
       "price": 25,
       "thumbnail": "sin imagen",
       "code": "abc128",
-      "stock": 11
+      "stock": 11,
+      "category": "Pelotas",
+      "status": true,
+      "thumbhails": [],
+      "id": 6
     },
     {
-      "id": 7,
       "title": "Pelota de Futbol",
       "description": "pelota oficial AFA",
       "price": 30,
       "thumbnail": "sin imagen",
       "code": "abc129",
-      "stock": 12
+      "stock": 12,
+      "category": "Pelotas",
+      "status": true,
+      "thumbhails": [],
+      "id": 7
     },
     {
-      "id": 8,
       "title": "Aro de basquet",
       "description": "aro profesional",
       "price": 140,
       "thumbnail": "sin imagen",
       "code": "abc130",
-      "stock": 20
+      "stock": 20,
+      "category": "Accesorios",
+      "status": true,
+      "thumbhails": [],
+      "id": 8
     },
     {
-      "id": 9,
       "title": "Arco de futbol",
       "description": "arco profesional",
       "price": 160,
       "thumbnail": "sin imagen",
       "code": "abc131",
-      "stock": 5
+      "stock": 5,
+      "category": "Accesorios",
+      "status": true,
+      "thumbhails": [],
+      "id": 9
     },
     {
-      "id": 10,
       "title": "Paleta de Padel",
       "description": "paleta profesional",
       "price": 80,
       "thumbnail": "sin imagen",
       "code": "abc132",
-      "stock": 10
+      "stock": 10,
+      "category": "Paleta",
+      "status": true,
+      "thumbhails": [],
+      "id": 10
     }
   ]
