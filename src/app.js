@@ -28,6 +28,14 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static("./src/public"));
 
+//Configuro soket io
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
+io.on('connection', (socket) => {
+    console.log('Nuevo cliente conectado');
+});
+
 
 
 app.listen(PUERTO, () => {
@@ -38,8 +46,6 @@ app.listen(PUERTO, () => {
 const ProductManager = require("./controllers/product-manager.js");
 const productManager = new ProductManager("./src/models/productos.json");
 
-
-const io = socket(server);
 
 //Obtengo el array:
 io.on("connection", async (socket) => {

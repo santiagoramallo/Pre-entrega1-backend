@@ -17,7 +17,9 @@
     "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
     "fs": "^0.0.1-security",
-    "socket.oi": "^0.0.1-security.8"
+    "socket.io": "^4.7.4",
+    "socket.oi": "^0.0.1-security.8",
+    "websocket": "^1.0.34"
   },
   "repository": {
     "type": "git",

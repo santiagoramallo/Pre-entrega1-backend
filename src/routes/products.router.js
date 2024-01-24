@@ -4,6 +4,7 @@ const router = express.Router();
 const ProductManager = require("../controllers/product-manager.js");
 const productManager = new ProductManager("./src/models/products.json");
 
+module.exports = function (io) {
 
 //rutas:
 
@@ -63,4 +64,15 @@ router.delete('/:pid', async (req, res) => {
   res.send(products);
 });
 
-module.exports = router;
+router.get('/real/realtimeproducts', async (req, res) => {
+  try {
+    const products = await productManager.getProducts();
+    res.render('realTimeProducts', { products });
+  } catch (err) {
+    res.status(500).send('Error al obtener productos');
+  }
+});
+
+return router;
+
+};
